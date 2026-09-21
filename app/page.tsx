@@ -46,8 +46,8 @@ export default function Home() {
             alt="Plant"
             className="absolute pixel-art"
             style={{
-              left: "1%",
-              top: "-1%",
+              left: "-6%",
+              top: "-15%",
               width: "43%",
               height: "auto",
             }}
@@ -58,8 +58,8 @@ export default function Home() {
             alt="Candle"
             className="absolute pixel-art"
             style={{
-              left: "2%",
-              top: "1%",
+              right: "-3%",
+              top: "-3%",
               width: "20%",
               height: "auto",
             }}
@@ -70,8 +70,8 @@ export default function Home() {
             alt="Coffee"
             className="absolute pixel-art"
             style={{
-              left: "1.5%",
-              bottom: "64%",
+              left: "-0.5%",
+              bottom: "26%",
               width: "21%",
               height: "auto",
             }}
