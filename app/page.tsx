@@ -41,7 +41,6 @@ export default function Home() {
           className="absolute inset-0 w-full h-full object-cover pixel-art"
         />
 
-        <div className="absolute -top-30 -left-25 w-full h-full">
           <img
             src="/sprites/Plant.png"
             alt="Plant"
@@ -53,9 +52,7 @@ export default function Home() {
               height: "auto",
             }}
           />
-        </div>
 
-        <div className="absolute -top-10 -right-280 w-full h-full">
           <img
             src="/sprites/Candle.gif"
             alt="Candle"
@@ -67,9 +64,7 @@ export default function Home() {
               height: "auto",
             }}
           />
-        </div>
 
-        <div className="absolute -bottom-70 -left-5 w-full h-full">
           <img
             src="/sprites/Coffee.gif"
             alt="Coffee"
@@ -81,7 +76,6 @@ export default function Home() {
               height: "auto",
             }}
           />
-        </div>
 
         <div
           className={`absolute origin-bottom-right transition-transform duration-200 ${
