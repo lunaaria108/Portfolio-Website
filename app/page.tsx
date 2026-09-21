@@ -99,27 +99,35 @@ export default function Home() {
             }}
           />
 
+        {/* Position wrapper */}
         <div
-          className={`absolute origin-bottom-right transition-transform duration-200 ${
-            isBookHovered
-              ? "-translate-y-0.5 scale-[1.005] drop-shadow-[0_0_8px_rgba(255,210,140,0.9)]"
-              : ""
-          }`}
+          className="absolute"
           style={{
-            right: "-3%",
-            bottom: "-13%",
+            left: "50%",
+            top: "52%",
+            transform: "translate(-50%, -50%)",
           }}
         >
+          {/* Hover wrapper */}
           <div
-            style={{
-              transform: `scale(${bookScale})`,
-              transformOrigin: "bottom right",
-            }}
+            className={`origin-center transition-transform duration-200 ${
+              isBookHovered
+                ? "-translate-y-0.5 scale-[1.005] drop-shadow-[0_0_8px_rgba(255,210,140,0.9)]"
+                : ""
+            }`}
           >
-            <Book
-              onFrameChange={setBookFrame}
-              onHoverChange={setIsBookHovered}
-            />
+            {/* Responsive-size wrapper */}
+            <div
+              style={{
+                transform: `scale(${bookScale})`,
+                transformOrigin: "center",
+              }}
+            >
+              <Book
+                onFrameChange={setBookFrame}
+                onHoverChange={setIsBookHovered}
+              />
+            </div>
           </div>
         </div>
  
