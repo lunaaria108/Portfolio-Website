@@ -103,8 +103,8 @@ export default function Home() {
         <div
           className="absolute"
           style={{
-            left: "50%",
-            top: "52%",
+            left: "85.25%",
+            top: "90%",
             transform: "translate(-50%, -50%)",
           }}
         >
@@ -119,7 +119,7 @@ export default function Home() {
             {/* Responsive-size wrapper */}
             <div
               style={{
-                transform: `scale(${bookScale})`,
+                transform: `scale(${bookScale * 1.12}, ${bookScale * 1.12})`,
                 transformOrigin: "center",
               }}
             >
