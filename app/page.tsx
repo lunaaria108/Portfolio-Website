@@ -45,7 +45,13 @@ export default function Home() {
           <img
             src="/sprites/Plant.png"
             alt="Plant"
-            className="h-150 w-150 object-cover pixel-art"
+            className="absolute pixel-art"
+            style={{
+              left: "1%",
+              top: "-1%",
+              width: "43%",
+              height: "auto",
+            }}
           />
         </div>
 
@@ -53,7 +59,13 @@ export default function Home() {
           <img
             src="/sprites/Candle.gif"
             alt="Candle"
-            className="h-75 w-75 object-cover pixel-art"
+            className="absolute pixel-art"
+            style={{
+              left: "2%",
+              top: "1%",
+              width: "20%",
+              height: "auto",
+            }}
           />
         </div>
 
@@ -61,16 +73,26 @@ export default function Home() {
           <img
             src="/sprites/Coffee.gif"
             alt="Coffee"
-            className="h-75 w-75 object-cover pixel-art"
+            className="absolute pixel-art"
+            style={{
+              left: "1.5%",
+              bottom: "64%",
+              width: "21%",
+              height: "auto",
+            }}
           />
         </div>
 
         <div
-          className={`absolute -bottom-25 -right-10 transition-transform duration-200 ${
+          className={`absolute origin-bottom-right transition-transform duration-200 ${
             isBookHovered
               ? "-translate-y-0.5 scale-[1.005] drop-shadow-[0_0_8px_rgba(255,210,140,0.9)]"
               : ""
           }`}
+          style={{
+            right: "-3%",
+            bottom: "-13%",
+          }}
         >
           <Book
             onFrameChange={setBookFrame}
