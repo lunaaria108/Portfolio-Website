@@ -13,15 +13,28 @@ export default function Home() {
   const [isBookHovered, setIsBookHovered] = useState(false);
   
   return (
-    <main className="w-screen h-screen overflow-hidden bg-black flex items-center justify-center">
+    <main className="flex h-screen w-screen items-center justify-center overflow-hidden bg-black">
       <div
-        className="relative overflow-hidden"
-        style={{
-          width: "100vw",
-          aspectRatio: "16 / 9",
-          maxHeight: "100vh",
-        }}
+        className="
+          relative
+          aspect-[16/9]
+          w-full
+          max-w-[calc(100vh*16/9)]
+          overflow-hidden
+        "
       >
+        <div className="fixed inset-0 z-[9999] hidden items-center justify-center bg-[#2b1717] p-8 max-[1100px]:flex">
+          <div className="max-w-md text-center text-[#d5bd93]">
+            <p className="text-xl font-bold">
+              Please view on a larger screen
+            </p>
+
+            <p className="mt-3 text-sm">
+              This interactive portfolio is designed for a laptop or desktop display.
+            </p>
+          </div>
+        </div>
+
         <img
           src="/sprites/Desk.png"
           alt="Desk"
@@ -64,8 +77,7 @@ export default function Home() {
             onHoverChange={setIsBookHovered}
           />
         </div>
-
-        {/* Lighting overlay */}
+ 
         <div className="absolute inset-0 z-50 overflow-hidden pointer-events-none ">
           <img
             src="/sprites/Lighting-sheet.png"
