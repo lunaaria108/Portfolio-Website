@@ -1,20 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Book from "./Components/book";
 
 const LIGHT_FRAME_COUNT = 5;
 
 export default function Home() {
   const [bookFrame, setBookFrame] = useState(0);
+  const sceneRef = useRef<HTMLDivElement>(null);
+  const [bookScale, setBookScale] = useState(1);
 
   const lightingFrames = [0, 0, 1, 2, 3, 4];
   const lightingFrame = bookFrame <= 5 ? lightingFrames[bookFrame] ?? 0 : 4;
   const [isBookHovered, setIsBookHovered] = useState(false);
   
+  useEffect(() => {
+    const scene = sceneRef.current;
+    if (!scene) return;
+
+    const updateBookScale = () => {
+      const sceneWidth = scene.getBoundingClientRect().width;
+
+      // Width where your book was originally aligned correctly
+      setBookScale(sceneWidth / 1536);
+    };
+
+    updateBookScale();
+
+    const observer = new ResizeObserver(updateBookScale);
+    observer.observe(scene);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="flex h-screen w-screen items-center justify-center overflow-hidden bg-black">
       <div
+        ref={sceneRef}
         className="
           relative
           aspect-[16/9]
@@ -88,10 +110,17 @@ export default function Home() {
             bottom: "-13%",
           }}
         >
-          <Book
-            onFrameChange={setBookFrame}
-            onHoverChange={setIsBookHovered}
-          />
+          <div
+            style={{
+              transform: `scale(${bookScale})`,
+              transformOrigin: "bottom right",
+            }}
+          >
+            <Book
+              onFrameChange={setBookFrame}
+              onHoverChange={setIsBookHovered}
+            />
+          </div>
         </div>
  
         <div className="absolute inset-0 z-50 overflow-hidden pointer-events-none ">
