@@ -66,7 +66,7 @@ export default function Book({
           </h2>
 
           <h3 className="text-[6px]">
-            Major: Bachelor of Science in Computer Science
+            Major: Bachelor of Science, Computer Science
           </h3>
 
           <p className="text-[6px]">
@@ -210,7 +210,7 @@ export default function Book({
           </h2>
 
           <p className="text-[6px]">
-            President
+            Co-President
           </p>
 
           <p className="text-[6px]">
@@ -231,7 +231,7 @@ export default function Book({
           </h1>
 
           <p className="text-[6px] mb-3">
-            HTML, CSS, JavaScript, React, Next.js, Java, C, Python, MongoDB
+            Java, C, C++, HTML, CSS, JavaScript, React, Next.js, MongoDB, Unity, WebXR
           </p>
 
           <h1 className={`${jacquarda.className} text-[12px] text-center mb-3`}>
@@ -253,25 +253,17 @@ export default function Book({
             Contact Me
           </h1>
 
-          <p className="text-[6px]">
-            Linkedin
-          </p>
-
-          <p className="text-[6px]">
-            Email
-          </p>
-
           <p className="text-[6px] mt-2">
-            Or leave a message...
+            Leave a message...
           </p>
 
            <div
             className="absolute z-50 pointer-events-auto"
             style={{
               left: "5%",
-              top: "50%",
+              top: "35%",
               width: "90%",
-              height: "50%",
+              height: "100%",
             }}
             onClick={(event) => event.stopPropagation()}
           >
@@ -497,14 +489,14 @@ export default function Book({
           {/* LEFT PAGE */}
           <button
             onClick={previousPage}
-            className="absolute left-0 top-0 w-1/2 h-full bg-transparent border-0 cursor-pointer"
+            className="absolute z-10 left-0 top-0 w-1/2 h-full bg-transparent border-0 cursor-pointer"
             aria-label="Previous page"
           />
 
           {/* RIGHT PAGE */}
           <button
             onClick={nextPage}
-            className="absolute right-0 top-0 w-1/2 h-full bg-transparent border-0 cursor-pointer"
+            className="absolute z-10 right-0 top-0 w-1/2 h-full bg-transparent border-0 cursor-pointer"
             aria-label="Next page"
           />
         </>
